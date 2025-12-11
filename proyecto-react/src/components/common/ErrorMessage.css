@@ -1,0 +1,34 @@
+/* Contenedor del error */
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+  background: #fff5f5;
+  border: 2px solid #feb2b2;
+  border-radius: 12px;
+  margin: 20px;
+}
+
+/* Icono de error */
+.error-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+/* Título del error */
+.error-title {
+  color: #c53030;
+  margin: 0 0 12px 0;
+  font-size: 20px;
+}
+
+/* Mensaje del error */
+.error-message {
+  color: #742a2a;
+  margin: 0 0 20px 0;
+  font-size: 15px;
+  max-width: 400px;
+}

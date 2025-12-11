@@ -1,0 +1,60 @@
+/* Contenedor principal */
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+/* Etiqueta */
+.input-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Asterisco de requerido */
+.input-required {
+  color: #dc3545;
+  margin-left: 4px;
+}
+
+/* Campo de input */
+.input-field {
+  padding: 10px 14px;
+  font-size: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+/* Focus en el input */
+.input-field:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* Input con error */
+.input-field.input-error {
+  border-color: #dc3545;
+}
+
+.input-field.input-error:focus {
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+/* Mensaje de error */
+.input-error-message {
+  font-size: 13px;
+  color: #dc3545;
+  margin-top: 4px;
+}
+
+/* Input deshabilitado */
+.input-field:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
