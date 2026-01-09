@@ -1,0 +1,263 @@
+/* Página CreateUser Profesional */
+.create-user-page {
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: calc(100vh - 140px);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Header */
+.create-user-header {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.create-user-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.create-title-gradient {
+  background: linear-gradient(135deg, var(--accent-cyan), var(--primary-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card del formulario */
+.create-user-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.create-user-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--primary-blue));
+}
+
+/* Header del formulario */
+.form-header {
+  padding: 32px;
+  background: linear-gradient(135deg, var(--secondary-gray), var(--bg-secondary));
+  border-bottom: 1px solid var(--border-color);
+}
+
+.form-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.form-description {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Body del formulario */
+.form-body {
+  padding: 32px;
+}
+
+/* Mensajes de éxito y error mejorados */
+.success-message {
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(0, 200, 83, 0.1), rgba(0, 200, 83, 0.05));
+  border: 2px solid var(--success);
+  border-radius: 12px;
+  color: var(--success);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.success-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.success-text {
+  flex: 1;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.error-alert {
+  margin-bottom: 24px;
+}
+
+/* Formulario */
+.user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Input containers personalizados */
+.form-input-container {
+  margin-bottom: 24px;
+}
+
+/* Info note mejorada */
+.info-note {
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 193, 7, 0.05));
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  border-radius: 12px;
+  margin-top: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.info-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.info-content {
+  flex: 1;
+}
+
+.info-title {
+  font-weight: 700;
+  color: var(--warning);
+  margin: 0 0 4px 0;
+  font-size: 14px;
+}
+
+.info-text {
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Footer del formulario */
+.form-footer {
+  padding: 24px 32px;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+/* Loader overlay */
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Progress indicator */
+.form-progress {
+  margin-bottom: 32px;
+  padding: 20px;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.progress-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 12px 0;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 8px;
+  background: var(--secondary-gray);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--primary-blue));
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .create-user-page {
+    padding: 20px;
+  }
+
+  .create-user-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .create-user-title {
+    font-size: 28px;
+  }
+
+  .form-header {
+    padding: 24px 20px;
+  }
+
+  .form-body {
+    padding: 24px 20px;
+  }
+
+  .form-footer {
+    padding: 20px;
+    flex-direction: column-reverse;
+  }
+
+  .form-footer button {
+    width: 100%;
+  }
+}

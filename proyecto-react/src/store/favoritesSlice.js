@@ -1,7 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+// Función auxiliar para cargar desde localStorage
+const loadFromStorage = () => {
+  try {
+    const stored = localStorage.getItem('favoriteUsers');
+    return stored ? JSON.parse(stored) : [];
+  } catch (error) {
+    console.error("Error al cargar favoritos del almacenamiento local:", error);
+    return []; // Si falla, iniciamos con un array vacío para no romper la app
+  }
+};
+
 const initialState = {
-  favoriteUsers: [], // Array vacío de donde se almacenan usuarios favoritos
+  favoriteUsers: loadFromStorage(), // Cargar favoritos guardados al iniciar
 };
 
 const favoritesSlice = createSlice({
@@ -14,8 +25,9 @@ const favoritesSlice = createSlice({
     addFavorite: (state, action) => {
       const userId = action.payload; // El ID del usuario
       // Solo agregar si NO está ya en favoritos
-      if (!state.favoriteUsers.includes(userId)) {
+      if (!state.favoriteUsers.some(id => String(id) === String(userId))) {
         state.favoriteUsers.push(userId);
+        localStorage.setItem('favoriteUsers', JSON.stringify(state.favoriteUsers));
       }
     },
     
@@ -23,13 +35,14 @@ const favoritesSlice = createSlice({
     removeFavorite: (state, action) => {
       const userId = action.payload;
       // Filtrar = quedarnos con todos MENOS el que queremos quitar
-      state.favoriteUsers = state.favoriteUsers.filter(id => id !== userId);
+      state.favoriteUsers = state.favoriteUsers.filter(id => String(id) !== String(userId));
+      localStorage.setItem('favoriteUsers', JSON.stringify(state.favoriteUsers));
     },
     
     // Alternar favorito (si está lo quita, si no está lo agrega)
     toggleFavorite: (state, action) => {
       const userId = action.payload;
-      const index = state.favoriteUsers.indexOf(userId);
+      const index = state.favoriteUsers.findIndex(id => String(id) === String(userId));
       
       if (index !== -1) {
         // Si existe, quitarlo
@@ -38,11 +51,13 @@ const favoritesSlice = createSlice({
         // Si no existe, agregarlo
         state.favoriteUsers.push(userId);
       }
+      localStorage.setItem('favoriteUsers', JSON.stringify(state.favoriteUsers));
     },
     
     // Limpiar TODOS los favoritos
     clearFavorites: (state) => {
       state.favoriteUsers = [];
+      localStorage.removeItem('favoriteUsers');
     },
   },
 });
@@ -58,7 +73,7 @@ export const {
 // Selectores = Funciones para LEER el estado
 export const selectFavoriteUsers = (state) => state.favorites.favoriteUsers;
 export const selectIsFavorite = (userId) => (state) => 
-  state.favorites.favoriteUsers.includes(userId);
+  state.favorites.favoriteUsers.some(id => String(id) === String(userId));
 
 // Exportar el reducer para el store
 export default favoritesSlice.reducer;

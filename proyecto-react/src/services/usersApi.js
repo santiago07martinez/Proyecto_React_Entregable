@@ -4,10 +4,8 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const usersApi = createApi({
   reducerPath: 'usersApi',
   
-  // URL base de la API pública
-  baseQuery: fetchBaseQuery({ 
-    baseUrl: 'https://jsonplaceholder.typicode.com' 
-  }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'http://127.0.0.1:3000' }),
+
   
   tagTypes: ['User'],
   

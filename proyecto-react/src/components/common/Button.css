@@ -1,78 +1,104 @@
-/* Estilos base del botón */
+/* Botón Base Profesional */
 .btn {
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: inherit;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   outline: none;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.3px;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::before {
+  width: 300px;
+  height: 300px;
 }
 
 /* Tamaños */
 .btn-small {
-  padding: 6px 16px;
+  padding: 8px 16px;
   font-size: 13px;
 }
 
 .btn-medium {
-  padding: 10px 24px;
-  font-size: 15px;
+  padding: 12px 24px;
+  font-size: 14px;
 }
 
 .btn-large {
-  padding: 14px 32px;
-  font-size: 17px;
+  padding: 16px 32px;
+  font-size: 16px;
 }
 
-/* Variante Primary (Azul) */
+/* Primary - Azul Gradiente */
 .btn-primary {
-  background-color: #007bff;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
   color: white;
+  box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
 }
 
 .btn-primary:hover:not(:disabled) {
-  background-color: #0056b3;
+  background: linear-gradient(135deg, var(--primary-blue-dark) 0%, var(--primary-blue) 100%);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+  box-shadow: 0 6px 25px rgba(0, 102, 204, 0.5);
 }
 
-/* Variante Secondary (Gris) */
+/* Secondary - Gris Oscuro */
 .btn-secondary {
-  background-color: #6c757d;
-  color: white;
+  background: var(--secondary-gray);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-secondary:hover:not(:disabled) {
-  background-color: #545b62;
+  background: var(--bg-hover);
+  border-color: var(--primary-blue);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(108, 117, 125, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 102, 204, 0.2);
 }
 
-/* Variante Danger (Rojo) */
+/* Danger - Rojo */
 .btn-danger {
-  background-color: #dc3545;
+  background: linear-gradient(135deg, #ef5350 0%, #e53935 100%);
   color: white;
+  box-shadow: 0 4px 15px rgba(239, 83, 80, 0.3);
 }
 
 .btn-danger:hover:not(:disabled) {
-  background-color: #c82333;
+  background: linear-gradient(135deg, #e53935 0%, #d32f2f 100%);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+  box-shadow: 0 6px 25px rgba(239, 83, 80, 0.5);
 }
 
 /* Estado deshabilitado */
 .btn:disabled {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
   transform: none;
+  box-shadow: none;
 }
 
-/* Al hacer click */
 .btn:active:not(:disabled) {
   transform: translateY(0);
 }

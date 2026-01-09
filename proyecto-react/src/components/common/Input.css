@@ -1,60 +1,71 @@
-/* Contenedor principal */
+/* Contenedor del input */
 .input-container {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-bottom: 16px;
+  gap: 8px;
+  margin-bottom: 20px;
 }
 
-/* Etiqueta */
+/* Label */
 .input-label {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
-  color: #333;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
-/* Asterisco de requerido */
 .input-required {
-  color: #dc3545;
+  color: var(--error);
   margin-left: 4px;
 }
 
-/* Campo de input */
+/* Input Field */
 .input-field {
-  padding: 10px 14px;
-  font-size: 15px;
-  border: 2px solid #e0e0e0;
+  padding: 12px 16px;
+  font-size: 14px;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
   border-radius: 8px;
   outline: none;
   transition: all 0.3s ease;
   font-family: inherit;
+  color: var(--text-primary);
 }
 
-/* Focus en el input */
+.input-field::placeholder {
+  color: var(--text-muted);
+}
+
 .input-field:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.1);
+  background: var(--bg-card);
 }
 
 /* Input con error */
 .input-field.input-error {
-  border-color: #dc3545;
+  border-color: var(--error);
 }
 
 .input-field.input-error:focus {
-  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+  box-shadow: 0 0 0 4px rgba(239, 83, 80, 0.1);
 }
 
 /* Mensaje de error */
 .input-error-message {
-  font-size: 13px;
-  color: #dc3545;
+  font-size: 12px;
+  color: var(--error);
   margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 /* Input deshabilitado */
 .input-field:disabled {
-  background-color: #f5f5f5;
+  background-color: var(--secondary-gray);
   cursor: not-allowed;
-  opacity: 0.6;
+  opacity: 0.5;
+  border-color: var(--border-color);
 }

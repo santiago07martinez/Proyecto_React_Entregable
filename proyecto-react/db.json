@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "id": "00c5",
+      "name": "Jaider Santiago Perez Martinez  ",
+      "email": "santiago07@gmail.com",
+      "phone": "3224316951",
+      "company": {
+        "name": "GSE"
+      },
+      "username": "santiago07"
+    }
+  ]
+}

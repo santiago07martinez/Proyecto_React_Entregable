@@ -4,31 +4,43 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  padding: 50px 40px;
   text-align: center;
-  background: #fff5f5;
-  border: 2px solid #feb2b2;
-  border-radius: 12px;
-  margin: 20px;
+  background: linear-gradient(135deg, rgba(239, 83, 80, 0.1), rgba(239, 83, 80, 0.05));
+  border: 2px solid rgba(239, 83, 80, 0.3);
+  border-radius: 16px;
+  margin: 40px 20px;
+  backdrop-filter: blur(10px);
 }
 
-/* Icono de error */
+/* Icono de error con animación */
 .error-icon {
-  font-size: 48px;
-  margin-bottom: 16px;
+  font-size: 64px;
+  margin-bottom: 20px;
+  animation: shake 0.5s ease-in-out;
+  filter: drop-shadow(0 4px 8px rgba(239, 83, 80, 0.3));
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
 }
 
 /* Título del error */
 .error-title {
-  color: #c53030;
+  color: var(--error);
   margin: 0 0 12px 0;
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 /* Mensaje del error */
 .error-message {
-  color: #742a2a;
-  margin: 0 0 20px 0;
+  color: var(--text-secondary);
+  margin: 0 0 28px 0;
   font-size: 15px;
-  max-width: 400px;
+  max-width: 500px;
+  line-height: 1.6;
 }
