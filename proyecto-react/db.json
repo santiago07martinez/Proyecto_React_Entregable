@@ -1,14 +1,92 @@
 {
   "users": [
     {
-      "id": "00c5",
+      "id": "e737",
       "name": "Jaider Santiago Perez Martinez  ",
       "email": "santiago07@gmail.com",
       "phone": "3224316951",
       "company": {
-        "name": "GSE"
+        "name": "GSE",
+        "role": "APRENDIZ SENA "
       },
       "username": "santiago07"
+    },
+    {
+      "id": "7653",
+      "name": "Carlos Alberto Rodriguez Sanchez",
+      "email": "CarlosGSE@mail.com",
+      "phone": "3544221783",
+      "company": {
+        "name": "GSE",
+        "role": "DESARROLLADOR SENIOR REACT NIVEL 1  "
+      },
+      "username": "CarlosGSE"
+    },
+    {
+      "id": "fbdf",
+      "name": "Maria Fernanda Sanchez Munevar",
+      "email": "Mafe@gmail.com",
+      "phone": "3576521429",
+      "company": {
+        "name": "GSE",
+        "role": "DESARROLLADOR JUNIOR"
+      },
+      "username": "Mafe"
+    },
+    {
+      "id": "d627",
+      "name": "Cristian Camilo Guerrero Mendoza",
+      "email": "cristian625@gmail.com",
+      "phone": "3446182511",
+      "company": {
+        "name": "GSE",
+        "role": "DESARROLLADOR JUNIOR"
+      },
+      "username": "cristian625"
+    },
+    {
+      "id": "c3c7",
+      "name": "David Leonardo Malaver Valenzuela",
+      "email": "David386@gmail.com",
+      "phone": "3769213621",
+      "company": {
+        "name": "GSE",
+        "role": "DESARROLLADOR JUNIOR"
+      },
+      "username": "David386"
+    },
+    {
+      "id": "12c7",
+      "name": "Linda Daniela Corchelo Pachon",
+      "email": "LindaDaniela@gmail.com",
+      "phone": "3743987741",
+      "company": {
+        "name": "GSE",
+        "role": "Analista de requerimientos Junior nivel 3"
+      },
+      "username": "LindaDaniela"
+    },
+    {
+      "id": "97df",
+      "name": "Yitza Magrieth Soler Artega",
+      "email": "Yit524@gmail.com",
+      "phone": "3665397683",
+      "company": {
+        "name": "GSE",
+        "role": "TESTER JUNIOR NIVEL 3"
+      },
+      "username": "Yit524"
+    },
+    {
+      "id": "2d32",
+      "name": "Marcela Bociga Angulo",
+      "email": "marce754@gmail.com",
+      "phone": "3658761290",
+      "company": {
+        "name": "GSE",
+        "role": "COORDINADORA DE PROYECTO"
+      },
+      "username": "marce754"
     }
   ]
 }

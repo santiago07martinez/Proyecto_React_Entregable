@@ -103,6 +103,7 @@ export const UserCard = ({ user, dispatch, navigate }) => {
         <p><strong>Email:</strong> {user.email}</p>
         <p><strong>Teléfono:</strong> {user.phone}</p>
         <p><strong>Empresa:</strong> {user.company.name}</p>
+        <p><strong>Rol:</strong> {user.company.role || 'No especificado'}</p>
       </CardBody>
       <CardFooter>
         <div style={{ display: 'flex', gap: '10px', width: '100%' }}>

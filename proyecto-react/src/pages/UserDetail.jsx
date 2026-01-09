@@ -82,6 +82,10 @@ const UserDetail = () => {
                 <div className="info-label">Empresa</div>
                 <div className="info-value">{user.company.name}</div>
               </div>
+              <div className="info-item">
+                <div className="info-label">Rol en la empresa</div>
+                <div className="info-value">{user.company.role || 'No especificado'}</div>
+              </div>
             </div>
           </div>
         </div>

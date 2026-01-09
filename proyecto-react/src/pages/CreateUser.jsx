@@ -12,6 +12,7 @@ const CreateUser = () => {
     email: '',
     phone: '',
     companyName: '',
+    role: '',
   });
 
   const [formErrors, setFormErrors] = useState({});
@@ -52,6 +53,10 @@ const CreateUser = () => {
     if (!formData.companyName.trim()) {
       errors.companyName = 'La empresa es obligatoria';
     }
+
+    if (!formData.role.trim()) {
+      errors.role = 'El rol es obligatorio';
+    }
     
     return errors;
   };
@@ -68,10 +73,11 @@ const CreateUser = () => {
     try {
       const payload = {
         ...formData,
-        company: { name: formData.companyName },
+        company: { name: formData.companyName, role: formData.role },
         username: formData.email.split('@')[0] // Generar username automáticamente
       };
       delete payload.companyName;
+      delete payload.role;
 
       const result = await createUser(payload).unwrap();
       console.log('Usuario creado:', result);
@@ -85,6 +91,7 @@ const CreateUser = () => {
           email: '',
           phone: '',
           companyName: '',
+          role: '',
         });
         setSuccessMessage('');
       }, 2000);
@@ -100,6 +107,7 @@ const CreateUser = () => {
       email: '',
       phone: '',
       companyName: '',
+      role: '',
     });
     setFormErrors({});
     setSuccessMessage('');
@@ -184,15 +192,16 @@ const CreateUser = () => {
               required
             />
 
-            <div style={{ 
-              padding: '15px', 
-              background: '#fff3cd', 
-              border: '1px solid #ffeaa7', 
-              borderRadius: '8px', 
-              marginTop: '20px',
-              fontSize: '14px'
-            }}>
-            </div>
+            <Input
+              label="Rol en la empresa"
+              name="role"
+              type="text"
+              placeholder="Ej: Desarrollador Senior"
+              value={formData.role}
+              onChange={handleChange}
+              error={formErrors.role}
+              required
+            />
           </form>
         </CardBody>
         <CardFooter>
