@@ -1,17 +1,6 @@
 {
   "users": [
     {
-      "id": "e737",
-      "name": "Jaider Santiago Perez Martinez  ",
-      "email": "santiago07@gmail.com",
-      "phone": "3224316951",
-      "company": {
-        "name": "GSE",
-        "role": "APRENDIZ SENA "
-      },
-      "username": "santiago07"
-    },
-    {
       "id": "7653",
       "name": "Carlos Alberto Rodriguez Sanchez",
       "email": "CarlosGSE@mail.com",
@@ -21,17 +10,6 @@
         "role": "DESARROLLADOR SENIOR REACT NIVEL 1  "
       },
       "username": "CarlosGSE"
-    },
-    {
-      "id": "fbdf",
-      "name": "Maria Fernanda Sanchez Munevar",
-      "email": "Mafe@gmail.com",
-      "phone": "3576521429",
-      "company": {
-        "name": "GSE",
-        "role": "DESARROLLADOR JUNIOR"
-      },
-      "username": "Mafe"
     },
     {
       "id": "d627",
@@ -87,6 +65,17 @@
         "role": "COORDINADORA DE PROYECTO"
       },
       "username": "marce754"
+    },
+    {
+      "id": "68ea",
+      "name": "Jaider Santiago Perez Martinez  ",
+      "email": "santiago07@gmail.com",
+      "phone": "3224316951",
+      "company": {
+        "name": "GSE",
+        "role": "APRENDIZ SENA "
+      },
+      "username": "santiago07"
     }
   ]
 }

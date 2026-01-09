@@ -1,15 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Button } from '../components/common';
 import { useGetUsersQuery } from '../services/usersApi';
-import { selectFavoriteUsers } from '../store/favoritesSlice';
+import { selectFavoriteUsers, removeFavorite } from '../store/favoritesSlice';
 import './Home.css';
 
 const Home = () => {
   const navigate = useNavigate();
-  const { data: users = [], isLoading } = useGetUsersQuery();
+  const dispatch = useDispatch();
+  const { data: users = [], isLoading, isSuccess } = useGetUsersQuery();
   const favoriteIds = useSelector(selectFavoriteUsers);
+
+  // Efecto de limpieza: Elimina automáticamente los favoritos que ya no existen
+  useEffect(() => {
+    if (isSuccess) {
+      favoriteIds.forEach(favId => {
+        // Si el ID del favorito no se encuentra en la lista de usuarios descargada...
+        if (!users.some(user => String(user.id) === String(favId))) {
+          dispatch(removeFavorite(favId)); // ...lo eliminamos del store
+        }
+      });
+    }
+  }, [isSuccess, users, favoriteIds, dispatch]);
 
   return (
     <div className="nexus-home">

@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useGetUserByIdQuery, useDeleteUserMutation } from '../services/usersApi';
-import { toggleFavorite, selectIsFavorite } from '../store/favoritesSlice';
+import { toggleFavorite, selectIsFavorite, removeFavorite } from '../store/favoritesSlice';
 import { Card, Button, Loader, ErrorMessage } from '../components/common';
 import './UserDetail.css';
 
@@ -23,6 +23,7 @@ const UserDetail = () => {
     if (window.confirm(`¿Estás seguro de que deseas eliminar a ${user.name}? Esta acción no se puede deshacer.`)) {
       try {
         await deleteUser(id).unwrap();
+        dispatch(removeFavorite(id));
         navigate('/users'); // Redirigir a la lista después de eliminar
       } catch (error) {
         console.error('Error al eliminar:', error);

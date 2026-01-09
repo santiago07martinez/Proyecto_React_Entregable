@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useGetUsersQuery, useDeleteUserMutation } from '../services/usersApi';
-import { toggleFavorite, selectIsFavorite } from '../store/favoritesSlice';
+import { toggleFavorite, selectIsFavorite, removeFavorite } from '../store/favoritesSlice';
 import { Card, CardHeader, CardBody, CardFooter, Button, Loader, ErrorMessage, Input } from '../components/common';
 
 const UsersList = () => {
@@ -78,6 +78,7 @@ export const UserCard = ({ user, dispatch, navigate }) => {
     if (window.confirm(`¿Estás seguro de que deseas eliminar a ${user.name}?`)) {
       try {
         await deleteUser(user.id).unwrap();
+        dispatch(removeFavorite(user.id));
       } catch (error) {
         console.error('Error al eliminar:', error);
         alert('No se pudo eliminar el usuario');
